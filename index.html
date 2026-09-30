@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ירדן רוזן | כלכלן ואנליסט נתונים</title>
   <meta name="description" content="ירדן רוזן - כלכלן ואנליסט נתונים. תיק עבודות: דאשבורדים פיננסיים, ניתוח נתונים ואוטומציה בפייתון." />
+  <link rel="canonical" href="https://yardenrozen.github.io/Portfolio/" />
+
+  <!-- Link previews (WhatsApp, LinkedIn, Facebook). og:image must be an absolute URL;
+       a dedicated 1200x630 image would fill the LinkedIn preview best. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="he_IL" />
+  <meta property="og:site_name" content="ירדן רוזן" />
+  <meta property="og:title" content="ירדן רוזן | כלכלן ואנליסט נתונים" />
+  <meta property="og:description" content="דאשבורדים פיננסיים, בקרה תקציבית וניתוח נתונים — Python, SQL, Power BI ו-Excel." />
+  <meta property="og:url" content="https://yardenrozen.github.io/Portfolio/" />
+  <meta property="og:image" content="https://yardenrozen.github.io/Portfolio/images/Profile%20LinkedIn.jpg" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="612" />
+  <meta property="og:image:alt" content="ירדן רוזן" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#081218" />
+  <!-- Heebo renders the Hebrew glyphs; Calibri stays the Latin face (see --font-sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700&display=swap" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -22,7 +42,7 @@
         <li><a href="#about" class="nav__link">אודות</a></li>
         <li><a href="#skills" class="nav__link">טכנולוגיות</a></li>
         <li><a href="#projects" class="nav__link">תיק עבודות</a></li>
-        <li><a href="#contact" class="nav__link">צור קשר</a></li>
+        <li><a href="#contact" class="nav__link">יצירת קשר</a></li>
       </ul>
     </nav>
   </header>
@@ -44,8 +64,13 @@
             שעוזרים למנהלי כספים לזהות חריגות, לחזות מגמות ולקבל החלטות מבוססות נתונים — מהר יותר.
           </p>
           <div class="hero__actions">
-            <a href="#projects" class="btn btn--primary">לתיק העבודות</a>
-            <a href="#contact" class="btn btn--ghost">צור קשר</a>
+            <!-- CV: place the PDF at cv/Yarden-Rozen-CV.pdf. The button hides itself on the live site until the file exists. -->
+            <a href="cv/Yarden-Rozen-CV.pdf" class="btn btn--primary" download data-requires-file>
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+              הורדת קורות חיים
+            </a>
+            <a href="#projects" class="btn btn--ghost">לתיק העבודות</a>
+            <a href="#contact" class="btn btn--ghost">יצירת קשר</a>
           </div>
         </div>
 
@@ -92,44 +117,245 @@
 
         <div class="projects-grid">
 
-          <!-- ===== PROJECT CARD: Budget Control ===== -->
-          <article class="card project-card reveal">
-            <div class="project-card__top">
-              <span class="project-card__index">01</span>
-              <span class="project-card__category">FP&amp;A · דאשבורד</span>
+          <!-- ===== PROJECT 01 (featured, full width): Budget Control ===== -->
+          <article class="project-card project-card--featured reveal">
+            <div class="project-card__panel">
+              <!-- Screenshot: place the file at images/budget-drilldown.png. Until it exists, a placeholder is shown. -->
+              <figure class="project-card__media" data-placeholder="צילום מסך של הדאשבורד יתווסף בקרוב">
+                <img src="images/budget-drilldown.png" alt="צילום מסך: דאשבורד בקרת תקציב עם ירידה מרמת מרכז עלות לפקודת יומן" loading="lazy" />
+              </figure>
+              <div class="project-card__content">
+                <div class="project-card__header">
+                  <span class="project-card__index">01</span>
+                  <span class="project-card__category"><bdi>FP&amp;A</bdi> · דאשבורד</span>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">מערכת בקרת תקציב - <bdi>DRILL-DOWN</bdi></h3>
+                  <p class="project-card__desc">
+                    דאשבורד אינטראקטיבי למנהלי כספים (<bdi>FP&amp;A</bdi>) המאפשר ניתוח חריגות, קצב שריפת תקציב (<bdi>Run-Rate</bdi>) וירידה לרזולוציית פקודות יומן.
+                  </p>
+                </div>
+
+                <!-- KPI strip: replace the sample figures with your own (demo-data) numbers.
+                     Keep the explicit +/- sign on the variance. -->
+                <div class="kpi-block">
+                  <dl class="kpi-strip">
+                    <div class="kpi">
+                      <dt class="kpi__label">תקציב <span class="kpi__unit">(מ׳ ₪)</span></dt>
+                      <dd class="kpi__value"><bdi dir="ltr">4.80</bdi></dd>
+                    </div>
+                    <div class="kpi">
+                      <dt class="kpi__label">ביצוע <span class="kpi__unit">(מ׳ ₪)</span></dt>
+                      <dd class="kpi__value"><bdi dir="ltr">5.02</bdi></dd>
+                    </div>
+                    <div class="kpi kpi--variance">
+                      <dt class="kpi__label">סטייה</dt>
+                      <dd class="kpi__value"><bdi dir="ltr">+4.6%</bdi> <span class="kpi__hint">מעל התקציב</span></dd>
+                    </div>
+                  </dl>
+                  <p class="kpi-note">נתוני דמה להמחשה</p>
+                </div>
+
+                <div class="project-card__footer">
+                  <ul class="pill-list pill-list--sm">
+                    <li class="pill">Python</li>
+                    <li class="pill">Streamlit</li>
+                    <li class="pill">Pandas</li>
+                  </ul>
+                  <div class="project-card__actions">
+                    <a href="https://yardenrozen.streamlit.app/" class="btn btn--primary project-card__btn" target="_blank" rel="noopener">
+                      צפה בפרויקט באוויר
+                      <svg class="btn__icon icon-directional" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h3 class="project-card__title">מערכת בקרת תקציב - <bdi>DRILL-DOWN</bdi></h3>
-            <p class="project-card__desc">
-              דאשבורד אינטראקטיבי למנהלי כספים (FP&amp;A) המאפשר ניתוח חריגות, קצב שריפת תקציב (Run-Rate) וירידה לרזולוציית פקודות יומן.
-            </p>
-            <ul class="pill-list pill-list--sm">
-              <li class="pill">Python</li>
-              <li class="pill">Streamlit</li>
-              <li class="pill">Pandas</li>
-            </ul>
-            <a href="https://yardenrozen.streamlit.app/" class="btn btn--primary project-card__btn" target="_blank" rel="noopener">
-              צפה בפרויקט באוויר
-            </a>
           </article>
-          <!-- ===== /PROJECT CARD ===== -->
+
+          <!-- ===== PROJECT 02: Retail pricing KPI dashboard ===== -->
+          <article class="project-card reveal">
+            <div class="project-card__panel">
+              <figure class="project-card__media">
+                <img src="images/Project%201%20-%20Dashboard%20Retail%20Pricing%20Analytics.jpg" alt="דאשבורד ביצועים ותמחור קמעונאי ב-Tableau" loading="lazy" />
+              </figure>
+              <div class="project-card__content">
+                <div class="project-card__header">
+                  <span class="project-card__index">02</span>
+                  <span class="project-card__category"><bdi>BI</bdi> · דאשבורד</span>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">דאשבורד ביצועים ותמחור קמעונאי</h3>
+                  <p class="project-card__desc">
+                    דאשבורד <bdi>KPI</bdi> אינטראקטיבי המתמקד במכירות, מרווחים, כמויות ושיעורי המרה, עם תצוגות ייעודיות לביצועי מוצרים ואזורים — לזיהוי מהיר של תובנות וקבלת החלטות מבוססות נתונים.
+                  </p>
+                </div>
+                <div class="project-card__footer">
+                  <ul class="pill-list pill-list--sm">
+                    <li class="pill">SQL</li>
+                    <li class="pill">Tableau</li>
+                  </ul>
+                  <div class="project-card__actions">
+                    <a href="https://public.tableau.com/app/profile/yarden.rozen/viz/RetailPriceAnalyticsDashboard_16739630412230/RetailPricingAnalytics" class="btn btn--primary btn--sm" target="_blank" rel="noopener">
+                      לצפייה ב-<bdi>Tableau</bdi>
+                      <svg class="btn__icon icon-directional" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== PROJECT 03: Online stores product-range analysis ===== -->
+          <article class="project-card reveal">
+            <div class="project-card__panel">
+              <figure class="project-card__media">
+                <img src="images/PROJECT%202%20-%20Data%20Analysis%20JPG%20276X276.jpg" alt="ניתוח מגוון המוצרים בחנויות מקוונות" loading="lazy" />
+              </figure>
+              <div class="project-card__content">
+                <div class="project-card__header">
+                  <span class="project-card__index">03</span>
+                  <span class="project-card__category">ניתוח נתונים</span>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">ניתוח מגוון מוצרים בחנויות מקוונות</h3>
+                  <p class="project-card__desc">
+                    ניקוי, עיבוד ומידול נתונים בפייתון לחשיפת מידע חבוי בנתוני החנויות, והצגת התוצאות בדאשבורד עם המלצות וצעדי המשך.
+                  </p>
+                </div>
+                <div class="project-card__footer">
+                  <ul class="pill-list pill-list--sm">
+                    <li class="pill">Python</li>
+                    <li class="pill">Tableau</li>
+                  </ul>
+                  <div class="project-card__actions">
+                    <a href="https://github.com/YardenRozen/Portfolio---Project----Python" class="btn btn--primary btn--sm" target="_blank" rel="noopener">
+                      לקוד ב-<bdi>GitHub</bdi>
+                      <svg class="btn__icon icon-directional" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                    <a href="https://public.tableau.com/app/profile/yarden.rozen/viz/Onlinestoresproductsrange_16733364165120/Dashboard1" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">
+                      <bdi>Tableau</bdi>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== PROJECT 04: SQL data cleaning ===== -->
+          <article class="project-card reveal">
+            <div class="project-card__panel">
+              <figure class="project-card__media">
+                <img src="images/Project%203%20-%20Data%20Analytics.png" alt="ניקוי וניתוח נתונים ב-SQL" loading="lazy" />
+              </figure>
+              <div class="project-card__content">
+                <div class="project-card__header">
+                  <span class="project-card__index">04</span>
+                  <span class="project-card__category"><bdi>SQL</bdi> · ניקוי נתונים</span>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">ניקוי וניתוח נתונים ב-<bdi>SQL</bdi></h3>
+                  <p class="project-card__desc">
+                    ניקוי והכנת נתונים ב-<bdi>SQL</bdi> על מאגר נתוני הנדל״ן <bdi>Nashville Housing</bdi>, לצד דאשבורד <bdi>Tableau</bdi> לניתוח מגמות לפי אזור.
+                  </p>
+                </div>
+                <div class="project-card__footer">
+                  <ul class="pill-list pill-list--sm">
+                    <li class="pill">SQL</li>
+                    <li class="pill">Tableau</li>
+                  </ul>
+                  <div class="project-card__actions">
+                    <a href="https://github.com/YardenRozen/Portfolio-Projects---SQL" class="btn btn--primary btn--sm" target="_blank" rel="noopener">
+                      לקוד ב-<bdi>GitHub</bdi>
+                      <svg class="btn__icon icon-directional" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                    <a href="https://public.tableau.com/app/profile/yarden.rozen/viz/TrendingVideosbyRegion/Dashboard1" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">
+                      <bdi>Tableau</bdi>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== PROJECT 05: Excel analytics & dashboards ===== -->
+          <article class="project-card reveal">
+            <div class="project-card__panel">
+              <figure class="project-card__media">
+                <img src="images/Project%204%20-%20Analytics%20and%20Dashboard%20(Excel).png" alt="ניתוח נתונים ודאשבורדים ב-Excel" loading="lazy" />
+              </figure>
+              <div class="project-card__content">
+                <div class="project-card__header">
+                  <span class="project-card__index">05</span>
+                  <span class="project-card__category"><bdi>Excel</bdi> · דאשבורד</span>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">ניתוח נתונים ודאשבורדים ב-<bdi>Excel</bdi></h3>
+                  <p class="project-card__desc">
+                    ניתוח נתונים ובניית דאשבורדים ב-<bdi>Excel</bdi> — הכלי הנפוץ ביותר בארגונים לניתוח עסקי ולדיווח שוטף.
+                  </p>
+                </div>
+                <div class="project-card__footer">
+                  <ul class="pill-list pill-list--sm">
+                    <li class="pill">Excel</li>
+                  </ul>
+                  <div class="project-card__actions">
+                    <a href="https://github.com/YardenRozen/Portfolio-Project-----Excel" class="btn btn--primary btn--sm" target="_blank" rel="noopener">
+                      לקבצים ב-<bdi>GitHub</bdi>
+                      <svg class="btn__icon icon-directional" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
 
           <!--
             ===== TEMPLATE: to add a new project, copy this block, remove the comment markers, and fill it in =====
+            - Wrap English terms inside Hebrew sentences in <bdi>...</bdi> so punctuation stays in place.
+            - The <figure> and the kpi-block are optional; delete either if the project has none.
+            - Add "project-card--featured" next to "project-card" to make a card full width.
 
-          <article class="card project-card reveal">
-            <div class="project-card__top">
-              <span class="project-card__index">02</span>
-              <span class="project-card__category">קטגוריה</span>
+          <article class="project-card reveal">
+            <div class="project-card__panel">
+              <figure class="project-card__media" data-placeholder="צילום מסך יתווסף בקרוב">
+                <img src="images/my-project.png" alt="תיאור התמונה" loading="lazy" />
+              </figure>
+              <div class="project-card__content">
+                <div class="project-card__header">
+                  <span class="project-card__index">06</span>
+                  <span class="project-card__category">קטגוריה</span>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">שם הפרויקט</h3>
+                  <p class="project-card__desc">תיאור קצר של הפרויקט.</p>
+                </div>
+                <div class="kpi-block">
+                  <dl class="kpi-strip">
+                    <div class="kpi">
+                      <dt class="kpi__label">מדד</dt>
+                      <dd class="kpi__value"><bdi dir="ltr">1,234</bdi></dd>
+                    </div>
+                    <div class="kpi kpi--variance">
+                      <dt class="kpi__label">סטייה</dt>
+                      <dd class="kpi__value"><bdi dir="ltr">-2.1%</bdi> <span class="kpi__hint">מתחת לתקציב</span></dd>
+                    </div>
+                  </dl>
+                </div>
+                <div class="project-card__footer">
+                  <ul class="pill-list pill-list--sm">
+                    <li class="pill">SQL</li>
+                    <li class="pill">Power BI</li>
+                  </ul>
+                  <div class="project-card__actions">
+                    <a href="https://example.com" class="btn btn--primary btn--sm" target="_blank" rel="noopener">
+                      לצפייה בפרויקט
+                      <svg class="btn__icon icon-directional" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h3 class="project-card__title">שם הפרויקט</h3>
-            <p class="project-card__desc">תיאור קצר של הפרויקט.</p>
-            <ul class="pill-list pill-list--sm">
-              <li class="pill">SQL</li>
-              <li class="pill">Power BI</li>
-            </ul>
-            <a href="https://example.com" class="btn btn--primary project-card__btn" target="_blank" rel="noopener">
-              צפה בפרויקט באוויר
-            </a>
           </article>
           -->
 

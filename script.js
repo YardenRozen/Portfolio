@@ -34,6 +34,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (avatarImg.complete && avatarImg.naturalWidth === 0) showPlaceholder();
   }
 
+  // ---------- Project screenshots ----------
+  // A missing image shows the placeholder if the frame defines one, otherwise the frame is removed.
+  document.querySelectorAll('.project-card__media').forEach((figure) => {
+    const img = figure.querySelector('img');
+    if (!img) return;
+    const onMissing = () => {
+      if (figure.dataset.placeholder) figure.classList.add('is-placeholder');
+      else figure.remove();
+    };
+    img.addEventListener('error', onMissing);
+    if (img.complete && img.naturalWidth === 0) onMissing();
+  });
+
+  // ---------- Links to files that may not be uploaded yet (e.g. the CV) ----------
+  // Hidden on the live site until the file exists. Skipped on file://, where fetch is blocked.
+  if (location.protocol.startsWith('http')) {
+    document.querySelectorAll('[data-requires-file]').forEach((link) => {
+      fetch(link.href, { method: 'HEAD' })
+        .then((res) => { if (!res.ok) link.hidden = true; })
+        .catch(() => { link.hidden = true; });
+    });
+  }
+
   // ---------- Reveal on scroll ----------
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
