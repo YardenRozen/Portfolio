@@ -38,6 +38,8 @@
         'I turn raw ERP data into interactive dashboards and automated tools that help finance managers ' +
         'spot variances, forecast trends and make data-driven decisions — faster.',
       'hero.cv': 'Download CV',
+      'cv.file': 'cv/Yarden-Rozen-CV.pdf',
+      'cv.filename': 'Yarden Rozen.pdf',
       'hero.toProjects': 'View Portfolio',
       'hero.toContact': 'Get in Touch',
       'hero.initials': 'YR',

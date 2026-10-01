@@ -75,8 +75,10 @@
             שעוזרים למנהלי כספים לזהות חריגות, לחזות מגמות ולקבל החלטות מבוססות נתונים — מהר יותר.
           </p>
           <div class="hero__actions">
-            <!-- CV: place the PDF at cv/Yarden-Rozen-CV.pdf. The button hides itself on the live site until the file exists. -->
-            <a href="cv/Yarden-Rozen-CV.pdf" class="btn btn--primary" download data-requires-file data-goatcounter-click="download-cv" data-goatcounter-title="הורדת קורות חיים">
+            <!-- CV: the Hebrew file is cv/ירדן רוזן.pdf (URL-encoded below); i18n.js swaps href + download
+                 to the English CV (cv.file / cv.filename). The GoatCounter event is "download-cv" in both languages.
+                 The button hides itself on the live site if the file is missing. -->
+            <a href="cv/%D7%99%D7%A8%D7%93%D7%9F%20%D7%A8%D7%95%D7%96%D7%9F.pdf" download="ירדן רוזן.pdf" data-i18n-attr="href:cv.file; download:cv.filename" class="btn btn--primary" data-requires-file data-goatcounter-click="download-cv" data-goatcounter-title="הורדת קורות חיים">
               <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
               <span data-i18n="hero.cv">הורדת קורות חיים</span>
             </a>
