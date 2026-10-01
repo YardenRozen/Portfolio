@@ -16,9 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const setMenu = (open) => {
     menu.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'סגור תפריט' : 'פתח תפריט');
+    toggle.setAttribute('aria-label', window.i18n.t(open ? 'ui.menuClose' : 'ui.menuOpen'));
   };
 
+  setMenu(false);
+  document.addEventListener('langchange', () => setMenu(menu.classList.contains('is-open')));
   toggle.addEventListener('click', () => setMenu(!menu.classList.contains('is-open')));
   links.forEach((link) => link.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', (e) => {

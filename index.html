@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ירדן רוזן | כלכלן ואנליסט נתונים</title>
+  <!-- Apply the saved language before first paint, so the layout direction never flips visibly -->
+  <script>try{if(localStorage.getItem('lang')==='en'){document.documentElement.lang='en';document.documentElement.dir='ltr';}}catch(e){}</script>
+  <title data-i18n="meta.title">ירדן רוזן | כלכלן ואנליסט נתונים</title>
   <meta name="description" content="ירדן רוזן - כלכלן ואנליסט נתונים. תיק עבודות: דאשבורדים פיננסיים, ניתוח נתונים ואוטומציה בפייתון." />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="canonical" href="https://yardenrozen.github.io/Portfolio/" />
@@ -12,6 +14,7 @@
        a dedicated 1200x630 image would fill the LinkedIn preview best. -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="he_IL" />
+  <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:site_name" content="ירדן רוזן" />
   <meta property="og:title" content="ירדן רוזן | כלכלן ואנליסט נתונים" />
   <meta property="og:description" content="דאשבורדים פיננסיים, בקרה תקציבית וניתוח נתונים — Python, SQL, Power BI ו-Excel." />
@@ -33,18 +36,25 @@
   <!-- ===================== Navigation ===================== -->
   <header class="site-header">
     <nav class="nav container">
-      <a href="#about" class="nav__brand">ירדן<span class="gradient-text">.</span>רוזן</a>
+      <a href="#about" class="nav__brand" data-i18n="nav.brand">ירדן<span class="gradient-text">.</span>רוזן</a>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#about" class="nav__link" data-i18n="nav.about">אודות</a></li>
+        <li><a href="#skills" class="nav__link" data-i18n="nav.skills">טכנולוגיות</a></li>
+        <li><a href="#projects" class="nav__link" data-i18n="nav.projects">תיק עבודות</a></li>
+        <li><a href="#contact" class="nav__link" data-i18n="nav.contact">יצירת קשר</a></li>
+      </ul>
+
+      <!-- Language switch: i18n.js updates the label and the highlighted option -->
+      <button type="button" class="lang-switch" lang="en" aria-label="Switch to English">
+        <span class="lang-switch__opt" data-lang="he" lang="he">עברית</span>
+        <span class="lang-switch__sep" aria-hidden="true">/</span>
+        <span class="lang-switch__opt" data-lang="en" lang="en">EN</span>
+      </button>
 
       <button class="nav__toggle" aria-label="פתח תפריט" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span><span></span>
       </button>
-
-      <ul class="nav__menu" id="nav-menu">
-        <li><a href="#about" class="nav__link">אודות</a></li>
-        <li><a href="#skills" class="nav__link">טכנולוגיות</a></li>
-        <li><a href="#projects" class="nav__link">תיק עבודות</a></li>
-        <li><a href="#contact" class="nav__link">יצירת קשר</a></li>
-      </ul>
     </nav>
   </header>
 
@@ -54,12 +64,12 @@
     <section id="about" class="hero section">
       <div class="container hero__grid">
         <div class="hero__text reveal">
-          <span class="eyebrow">אודות</span>
+          <span class="eyebrow" data-i18n="hero.eyebrow">אודות</span>
           <h1 class="hero__title">
-            ירדן רוזן
-            <span class="hero__subtitle gradient-text">כלכלן ואנליסט נתונים</span>
+            <span data-i18n="hero.name">ירדן רוזן</span>
+            <span class="hero__subtitle gradient-text" data-i18n="hero.subtitle">כלכלן ואנליסט נתונים</span>
           </h1>
-          <p class="hero__summary">
+          <p class="hero__summary" data-i18n="hero.summary">
             כלכלן ואנליסט נתונים עם התמחות בבקרה תקציבית, תמחיר וניתוח ביצועים פיננסיים.
             אני הופך נתונים גולמיים ממערכות ERP לדאשבורדים אינטראקטיביים ולכלים אוטומטיים
             שעוזרים למנהלי כספים לזהות חריגות, לחזות מגמות ולקבל החלטות מבוססות נתונים — מהר יותר.
@@ -68,18 +78,18 @@
             <!-- CV: place the PDF at cv/Yarden-Rozen-CV.pdf. The button hides itself on the live site until the file exists. -->
             <a href="cv/Yarden-Rozen-CV.pdf" class="btn btn--primary" download data-requires-file data-goatcounter-click="download-cv" data-goatcounter-title="הורדת קורות חיים">
               <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
-              הורדת קורות חיים
+              <span data-i18n="hero.cv">הורדת קורות חיים</span>
             </a>
-            <a href="#projects" class="btn btn--ghost">לתיק העבודות</a>
-            <a href="#contact" class="btn btn--ghost">יצירת קשר</a>
+            <a href="#projects" class="btn btn--ghost" data-i18n="hero.toProjects">לתיק העבודות</a>
+            <a href="#contact" class="btn btn--ghost" data-i18n="hero.toContact">יצירת קשר</a>
           </div>
         </div>
 
         <div class="hero__visual reveal">
           <div class="avatar">
             <!-- To use a different photo, replace the src below -->
-            <img class="avatar__img" src="images/Profile LinkedIn.jpg" alt="ירדן רוזן" />
-            <span class="avatar__fallback" aria-hidden="true">י״ר</span>
+            <img class="avatar__img" src="images/Profile LinkedIn.jpg" alt="ירדן רוזן" data-i18n-attr="alt:hero.name" />
+            <span class="avatar__fallback" aria-hidden="true" data-i18n="hero.initials">י״ר</span>
           </div>
         </div>
       </div>
@@ -89,8 +99,8 @@
     <section id="skills" class="section">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow">ארגז הכלים</span>
-          <h2 class="section__title">טכנולוגיות</h2>
+          <span class="eyebrow" data-i18n="skills.eyebrow">ארגז הכלים</span>
+          <h2 class="section__title" data-i18n="skills.title">טכנולוגיות</h2>
         </div>
 
         <div class="card skills reveal">
@@ -102,7 +112,7 @@
             <li class="pill">SQL</li>
             <li class="pill">Power BI</li>
             <li class="pill">Excel / VBA</li>
-            <li class="pill">מערכות ERP</li>
+            <li class="pill" data-i18n="skills.erp">מערכות ERP</li>
           </ul>
         </div>
       </div>
@@ -112,8 +122,8 @@
     <section id="projects" class="section">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow">פרויקטים נבחרים</span>
-          <h2 class="section__title">תיק עבודות</h2>
+          <span class="eyebrow" data-i18n="projects.eyebrow">פרויקטים נבחרים</span>
+          <h2 class="section__title" data-i18n="projects.title">תיק עבודות</h2>
         </div>
 
         <div class="projects-grid">
@@ -122,17 +132,17 @@
           <article class="project-card project-card--featured reveal">
             <div class="project-card__panel">
               <!-- Project image: images/budget-drilldown.jpg. If it is missing, a placeholder is shown. -->
-              <figure class="project-card__media" data-placeholder="צילום מסך של הדאשבורד יתווסף בקרוב">
-                <img src="images/budget-drilldown.jpg" alt="המחשה: דאשבורד בקרת תקציב המציג תקציב, ביצוע ופילוח הוצאות" loading="lazy" />
+              <figure class="project-card__media" data-placeholder="צילום מסך של הדאשבורד יתווסף בקרוב" data-i18n-attr="data-placeholder:p1.placeholder">
+                <img src="images/budget-drilldown.jpg" alt="המחשה: דאשבורד בקרת תקציב המציג תקציב, ביצוע ופילוח הוצאות" data-i18n-attr="alt:p1.alt" loading="lazy" />
               </figure>
               <div class="project-card__content">
                 <div class="project-card__header">
                   <span class="project-card__index">01</span>
-                  <span class="project-card__category"><bdi>FP&amp;A</bdi> · דאשבורד</span>
+                  <span class="project-card__category" data-i18n="p1.category"><bdi>FP&amp;A</bdi> · דאשבורד</span>
                 </div>
                 <div class="project-card__body">
-                  <h3 class="project-card__title">מערכת בקרת תקציב - <bdi>DRILL-DOWN</bdi></h3>
-                  <p class="project-card__desc">
+                  <h3 class="project-card__title" data-i18n="p1.title">מערכת בקרת תקציב - <bdi>DRILL-DOWN</bdi></h3>
+                  <p class="project-card__desc" data-i18n="p1.desc">
                     דאשבורד אינטראקטיבי למנהלי כספים (<bdi>FP&amp;A</bdi>) המאפשר ניתוח חריגות, קצב שריפת תקציב (<bdi>Run-Rate</bdi>) וירידה לרזולוציית פקודות יומן.
                   </p>
                 </div>
@@ -142,19 +152,19 @@
                 <div class="kpi-block">
                   <dl class="kpi-strip">
                     <div class="kpi">
-                      <dt class="kpi__label">תקציב <span class="kpi__unit">(מ׳ ₪)</span></dt>
+                      <dt class="kpi__label" data-i18n="p1.kpiBudget">תקציב <span class="kpi__unit">(מ׳ ₪)</span></dt>
                       <dd class="kpi__value"><bdi dir="ltr">4.80</bdi></dd>
                     </div>
                     <div class="kpi">
-                      <dt class="kpi__label">ביצוע <span class="kpi__unit">(מ׳ ₪)</span></dt>
+                      <dt class="kpi__label" data-i18n="p1.kpiActual">ביצוע <span class="kpi__unit">(מ׳ ₪)</span></dt>
                       <dd class="kpi__value"><bdi dir="ltr">5.02</bdi></dd>
                     </div>
                     <div class="kpi kpi--variance">
-                      <dt class="kpi__label">סטייה</dt>
-                      <dd class="kpi__value"><bdi dir="ltr">+4.6%</bdi> <span class="kpi__hint">מעל התקציב</span></dd>
+                      <dt class="kpi__label" data-i18n="p1.kpiVariance">סטייה</dt>
+                      <dd class="kpi__value"><bdi dir="ltr">+4.6%</bdi> <span class="kpi__hint" data-i18n="p1.kpiHint">מעל התקציב</span></dd>
                     </div>
                   </dl>
-                  <p class="kpi-note">נתוני דמה להמחשה</p>
+                  <p class="kpi-note" data-i18n="p1.kpiNote">נתוני דמה להמחשה</p>
                 </div>
 
                 <div class="project-card__footer">
@@ -165,7 +175,7 @@
                   </ul>
                   <div class="project-card__actions">
                     <a href="https://yardenrozen.streamlit.app/" class="btn btn--primary project-card__btn" target="_blank" rel="noopener">
-                      צפה בפרויקט באוויר
+                      <span data-i18n="p1.cta">צפה בפרויקט באוויר</span>
                       <svg class="btn__icon icon-directional" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                     </a>
                   </div>
@@ -178,16 +188,16 @@
           <article class="project-card reveal">
             <div class="project-card__panel">
               <figure class="project-card__media">
-                <img src="images/Project%201%20-%20Dashboard%20Retail%20Pricing%20Analytics.jpg" alt="דאשבורד ביצועים ותמחור קמעונאי ב-Tableau" loading="lazy" />
+                <img src="images/Project%201%20-%20Dashboard%20Retail%20Pricing%20Analytics.jpg" alt="דאשבורד ביצועים ותמחור קמעונאי ב-Tableau" data-i18n-attr="alt:p2.alt" loading="lazy" />
               </figure>
               <div class="project-card__content">
                 <div class="project-card__header">
                   <span class="project-card__index">02</span>
-                  <span class="project-card__category"><bdi>BI</bdi> · דאשבורד</span>
+                  <span class="project-card__category" data-i18n="p2.category"><bdi>BI</bdi> · דאשבורד</span>
                 </div>
                 <div class="project-card__body">
-                  <h3 class="project-card__title">דאשבורד ביצועים ותמחור קמעונאי</h3>
-                  <p class="project-card__desc">
+                  <h3 class="project-card__title" data-i18n="p2.title">דאשבורד ביצועים ותמחור קמעונאי</h3>
+                  <p class="project-card__desc" data-i18n="p2.desc">
                     דאשבורד <bdi>KPI</bdi> אינטראקטיבי המתמקד במכירות, מרווחים, כמויות ושיעורי המרה, עם תצוגות ייעודיות לביצועי מוצרים ואזורים — לזיהוי מהיר של תובנות וקבלת החלטות מבוססות נתונים.
                   </p>
                 </div>
@@ -198,7 +208,7 @@
                   </ul>
                   <div class="project-card__actions">
                     <a href="https://public.tableau.com/app/profile/yarden.rozen/viz/RetailPriceAnalyticsDashboard_16739630412230/RetailPricingAnalytics" class="btn btn--primary btn--sm" target="_blank" rel="noopener">
-                      לצפייה ב-<bdi>Tableau</bdi>
+                      <span data-i18n="cta.tableau">לצפייה ב-<bdi>Tableau</bdi></span>
                       <svg class="btn__icon icon-directional" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                     </a>
                   </div>
@@ -211,16 +221,16 @@
           <article class="project-card reveal">
             <div class="project-card__panel">
               <figure class="project-card__media">
-                <img src="images/PROJECT%202%20-%20Data%20Analysis%20JPG%20276X276.jpg" alt="ניתוח מגוון המוצרים בחנויות מקוונות" loading="lazy" />
+                <img src="images/PROJECT%202%20-%20Data%20Analysis%20JPG%20276X276.jpg" alt="ניתוח מגוון המוצרים בחנויות מקוונות" data-i18n-attr="alt:p3.alt" loading="lazy" />
               </figure>
               <div class="project-card__content">
                 <div class="project-card__header">
                   <span class="project-card__index">03</span>
-                  <span class="project-card__category">ניתוח נתונים</span>
+                  <span class="project-card__category" data-i18n="p3.category">ניתוח נתונים</span>
                 </div>
                 <div class="project-card__body">
-                  <h3 class="project-card__title">ניתוח מגוון מוצרים בחנויות מקוונות</h3>
-                  <p class="project-card__desc">
+                  <h3 class="project-card__title" data-i18n="p3.title">ניתוח מגוון מוצרים בחנויות מקוונות</h3>
+                  <p class="project-card__desc" data-i18n="p3.desc">
                     ניקוי, עיבוד ומידול נתונים בפייתון לחשיפת מידע חבוי בנתוני החנויות, והצגת התוצאות בדאשבורד עם המלצות וצעדי המשך.
                   </p>
                 </div>
@@ -231,7 +241,7 @@
                   </ul>
                   <div class="project-card__actions">
                     <a href="https://github.com/YardenRozen/Portfolio---Project----Python" class="btn btn--primary btn--sm" target="_blank" rel="noopener">
-                      לקוד ב-<bdi>GitHub</bdi>
+                      <span data-i18n="cta.githubCode">לקוד ב-<bdi>GitHub</bdi></span>
                       <svg class="btn__icon icon-directional" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                     </a>
                     <a href="https://public.tableau.com/app/profile/yarden.rozen/viz/Onlinestoresproductsrange_16733364165120/Dashboard1" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">
@@ -247,16 +257,16 @@
           <article class="project-card reveal">
             <div class="project-card__panel">
               <figure class="project-card__media">
-                <img src="images/Project%203%20-%20Data%20Analytics.png" alt="ניקוי וניתוח נתונים ב-SQL" loading="lazy" />
+                <img src="images/Project%203%20-%20Data%20Analytics.png" alt="ניקוי וניתוח נתונים ב-SQL" data-i18n-attr="alt:p4.alt" loading="lazy" />
               </figure>
               <div class="project-card__content">
                 <div class="project-card__header">
                   <span class="project-card__index">04</span>
-                  <span class="project-card__category"><bdi>SQL</bdi> · ניקוי נתונים</span>
+                  <span class="project-card__category" data-i18n="p4.category"><bdi>SQL</bdi> · ניקוי נתונים</span>
                 </div>
                 <div class="project-card__body">
-                  <h3 class="project-card__title">ניקוי וניתוח נתונים ב-<bdi>SQL</bdi></h3>
-                  <p class="project-card__desc">
+                  <h3 class="project-card__title" data-i18n="p4.title">ניקוי וניתוח נתונים ב-<bdi>SQL</bdi></h3>
+                  <p class="project-card__desc" data-i18n="p4.desc">
                     ניקוי והכנת נתונים ב-<bdi>SQL</bdi> על מאגר נתוני הנדל״ן <bdi>Nashville Housing</bdi>, לצד דאשבורד <bdi>Tableau</bdi> לניתוח מגמות לפי אזור.
                   </p>
                 </div>
@@ -267,7 +277,7 @@
                   </ul>
                   <div class="project-card__actions">
                     <a href="https://github.com/YardenRozen/Portfolio-Projects---SQL" class="btn btn--primary btn--sm" target="_blank" rel="noopener">
-                      לקוד ב-<bdi>GitHub</bdi>
+                      <span data-i18n="cta.githubCode">לקוד ב-<bdi>GitHub</bdi></span>
                       <svg class="btn__icon icon-directional" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                     </a>
                     <a href="https://public.tableau.com/app/profile/yarden.rozen/viz/TrendingVideosbyRegion/Dashboard1" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">
@@ -283,16 +293,16 @@
           <article class="project-card reveal">
             <div class="project-card__panel">
               <figure class="project-card__media">
-                <img src="images/Project%204%20-%20Analytics%20and%20Dashboard%20(Excel).png" alt="ניתוח נתונים ודאשבורדים ב-Excel" loading="lazy" />
+                <img src="images/Project%204%20-%20Analytics%20and%20Dashboard%20(Excel).png" alt="ניתוח נתונים ודאשבורדים ב-Excel" data-i18n-attr="alt:p5.alt" loading="lazy" />
               </figure>
               <div class="project-card__content">
                 <div class="project-card__header">
                   <span class="project-card__index">05</span>
-                  <span class="project-card__category"><bdi>Excel</bdi> · דאשבורד</span>
+                  <span class="project-card__category" data-i18n="p5.category"><bdi>Excel</bdi> · דאשבורד</span>
                 </div>
                 <div class="project-card__body">
-                  <h3 class="project-card__title">ניתוח נתונים ודאשבורדים ב-<bdi>Excel</bdi></h3>
-                  <p class="project-card__desc">
+                  <h3 class="project-card__title" data-i18n="p5.title">ניתוח נתונים ודאשבורדים ב-<bdi>Excel</bdi></h3>
+                  <p class="project-card__desc" data-i18n="p5.desc">
                     ניתוח נתונים ובניית דאשבורדים ב-<bdi>Excel</bdi> — הכלי הנפוץ ביותר בארגונים לניתוח עסקי ולדיווח שוטף.
                   </p>
                 </div>
@@ -302,7 +312,7 @@
                   </ul>
                   <div class="project-card__actions">
                     <a href="https://github.com/YardenRozen/Portfolio-Project-----Excel" class="btn btn--primary btn--sm" target="_blank" rel="noopener">
-                      לקבצים ב-<bdi>GitHub</bdi>
+                      <span data-i18n="cta.githubFiles">לקבצים ב-<bdi>GitHub</bdi></span>
                       <svg class="btn__icon icon-directional" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                     </a>
                   </div>
@@ -316,20 +326,22 @@
             - Wrap English terms inside Hebrew sentences in <bdi>...</bdi> so punctuation stays in place.
             - The <figure> and the kpi-block are optional; delete either if the project has none.
             - Add "project-card--featured" next to "project-card" to make a card full width.
+            - English: add the p6.* keys to the `en` dictionary in i18n.js. A key with no English
+              entry keeps its Hebrew text, so the card works before it is translated.
 
           <article class="project-card reveal">
             <div class="project-card__panel">
-              <figure class="project-card__media" data-placeholder="צילום מסך יתווסף בקרוב">
-                <img src="images/my-project.png" alt="תיאור התמונה" loading="lazy" />
+              <figure class="project-card__media" data-placeholder="צילום מסך יתווסף בקרוב" data-i18n-attr="data-placeholder:p6.placeholder">
+                <img src="images/my-project.png" alt="תיאור התמונה" data-i18n-attr="alt:p6.alt" loading="lazy" />
               </figure>
               <div class="project-card__content">
                 <div class="project-card__header">
                   <span class="project-card__index">06</span>
-                  <span class="project-card__category">קטגוריה</span>
+                  <span class="project-card__category" data-i18n="p6.category">קטגוריה</span>
                 </div>
                 <div class="project-card__body">
-                  <h3 class="project-card__title">שם הפרויקט</h3>
-                  <p class="project-card__desc">תיאור קצר של הפרויקט.</p>
+                  <h3 class="project-card__title" data-i18n="p6.title">שם הפרויקט</h3>
+                  <p class="project-card__desc" data-i18n="p6.desc">תיאור קצר של הפרויקט.</p>
                 </div>
                 <div class="kpi-block">
                   <dl class="kpi-strip">
@@ -350,7 +362,7 @@
                   </ul>
                   <div class="project-card__actions">
                     <a href="https://example.com" class="btn btn--primary btn--sm" target="_blank" rel="noopener">
-                      לצפייה בפרויקט
+                      <span data-i18n="p6.cta">לצפייה בפרויקט</span>
                       <svg class="btn__icon icon-directional" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                     </a>
                   </div>
@@ -368,8 +380,8 @@
     <section id="contact" class="section">
       <div class="container">
         <div class="card contact reveal">
-          <h2 class="section__title">בואו נדבר</h2>
-          <p class="contact__text">פתוח להזדמנויות בתחומי FP&amp;A, בקרה תקציבית וניתוח נתונים.</p>
+          <h2 class="section__title" data-i18n="contact.title">בואו נדבר</h2>
+          <p class="contact__text" data-i18n="contact.text">פתוח להזדמנויות בתחומי FP&amp;A, בקרה תקציבית וניתוח נתונים.</p>
           <div class="contact__links">
             <a href="https://www.linkedin.com/in/yarden-rozen/" class="btn btn--primary" target="_blank" rel="noopener">LinkedIn</a>
             <a href="https://github.com/YardenRozen" class="btn btn--ghost" target="_blank" rel="noopener">GitHub</a>
@@ -382,10 +394,11 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> ירדן רוזן. כל הזכויות שמורות.</p>
+      <p>© <span id="year"></span> <span data-i18n="footer.rights">ירדן רוזן. כל הזכויות שמורות.</span></p>
     </div>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
   <!-- GoatCounter: cookie-free, privacy-focused analytics (page views, referrers, devices).
        Dashboard: https://yardenrozen.goatcounter.com (requires a GoatCounter account with the code "yardenrozen").
