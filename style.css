@@ -844,6 +844,12 @@ svg {
 .kpi {
   padding-block: var(--space-3);
   padding-inline: var(--space-4);
+  /* Label and figure rows are shared across the strip, so figures line up
+     even when one label wraps to two lines */
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
+  align-content: start;
 }
 
 .kpi:first-child {
@@ -918,6 +924,12 @@ svg {
     grid-template-areas: "content media";
     align-items: center;
     gap: var(--space-10);
+  }
+
+  /* Consecutive featured cards alternate sides: --flip puts the image at the inline-start */
+  .project-card--featured.project-card--flip .project-card__panel {
+    grid-template-columns: 1.15fr 1fr;
+    grid-template-areas: "media content";
   }
 
   .project-card--featured .project-card__content { grid-area: content; }

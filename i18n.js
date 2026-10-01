@@ -69,6 +69,20 @@
       'p1.kpiNote': 'Sample data for illustration',
       'p1.cta': 'View Live Project',
 
+      'pricing.placeholder': 'Simulator screenshot coming soon',
+      'pricing.alt': 'Pricing and profitability simulator: operating profit, break-even point, contribution margin and unit cost structure',
+      'pricing.category': 'Costing · Simulator',
+      'pricing.title': 'Pricing &amp; Profitability Feasibility Simulator',
+      'pricing.desc':
+        'Enterprise-grade financial simulator built with Python &amp; Streamlit, ' +
+        'featuring granular costing, break-even analysis, and stress tests.',
+      'pricing.kpiProfit': 'Operating profit <span class="kpi__unit">(₪K)</span>',
+      'pricing.kpiBreakEven': 'Break-even <span class="kpi__unit">(units)</span>',
+      'pricing.kpiMargin': 'Contribution margin',
+      'pricing.kpiSafety': 'Margin of safety',
+      'pricing.kpiNote': "The simulator's default scenario",
+      'pricing.cta': 'View Live Project',
+
       'p2.alt': 'Retail performance and pricing dashboard in Tableau',
       'p2.category': 'BI · Dashboard',
       'p2.title': 'Retail Performance &amp; Pricing Dashboard',
