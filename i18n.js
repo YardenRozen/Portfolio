@@ -52,8 +52,6 @@
       'projects.title': 'Portfolio',
 
       'cta.tableau': 'View on Tableau',
-      'cta.githubCode': 'Code on GitHub',
-      'cta.githubFiles': 'Files on GitHub',
 
       'p1.placeholder': 'Dashboard screenshot coming soon',
       'p1.alt': 'Illustration: budget control dashboard showing budget, actuals and expense breakdown',
@@ -82,6 +80,21 @@
       'pricing.kpiSafety': 'Margin of safety',
       'pricing.kpiNote': "The simulator's default scenario",
       'pricing.cta': 'View Live Project',
+
+      'supply.placeholder': 'Dashboard screenshot coming soon',
+      'supply.alt': 'Supply chain dashboard: budget vs. actual, variance by distribution center and monthly trend',
+      'supply.category': 'FMCG · Logistics',
+      'supply.title': 'Supply Chain &amp; Logistics Dashboard',
+      'supply.desc':
+        'An interactive, bilingual financial dashboard for an FMCG enterprise. Features budget variance tracking, ' +
+        'warehouse productivity analysis, and a dynamic Headcount Optimizer simulator calculating net savings ' +
+        'and FTE reduction based on logistics volume forecasts.',
+      'supply.kpiBudget': 'Budget <span class="kpi__unit">(₪M)</span>',
+      'supply.kpiActual': 'Actual <span class="kpi__unit">(₪M)</span>',
+      'supply.kpiVariance': 'Variance',
+      'supply.kpiHint': 'over budget',
+      'supply.kpiNote': 'FY2025 figures from the dashboard',
+      'supply.cta': 'View Live Project',
 
       'p2.alt': 'Retail performance and pricing dashboard in Tableau',
       'p2.category': 'BI · Dashboard',
