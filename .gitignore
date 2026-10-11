@@ -1,2 +1,8 @@
 # Local log of the CV auto-publisher (publish-cv.ps1)
 publish-cv.log
+
+# Local design work (moodboards, prototypes); never published
+design/
+
+# Local project plan (work protocol); never published
+PROJECT_PLAN.md
