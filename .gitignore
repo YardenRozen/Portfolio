@@ -6,3 +6,9 @@ design/
 
 # Local project plan (work protocol); never published
 PROJECT_PLAN.md
+
+# Local progress tracking (status line); never published
+progress.json
+dev/
+.vscode/
+.claude/settings.local.json
