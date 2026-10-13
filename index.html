@@ -58,8 +58,9 @@
 
       <!-- Language switch: always laid out "עב | EN" (dir=ltr), so it never jumps when the page flips.
            i18n.js moves the block (data-active) and updates the label. -->
-      <button type="button" class="lang" dir="ltr" data-active="he" aria-label="Switch to English">
+      <button type="button" class="lang" dir="ltr" data-active="he">
         <span lang="he">עב</span><span lang="en">EN</span>
+        <span class="visually-hidden" data-i18n="ui.switchTo">Switch to English</span>
       </button>
 
       <button type="button" class="nav__toggle" aria-label="פתח תפריט" aria-expanded="false" aria-controls="nav-menu">
@@ -109,7 +110,7 @@
       <header class="section-head reveal">
         <span class="section-head__no num">01</span>
         <h2 class="section-head__title" data-i18n="apps.title">שלוש אפליקציות חיות</h2>
-        <p class="section-head__lead" data-i18n="apps.lead">כלים פיננסיים שרצים באוויר, בנויים בפייתון ו-<bdi>Streamlit</bdi>. הכניסה בקוד גישה שמופיע בקורות החיים.</p>
+        <p class="section-head__lead" data-i18n="apps.lead">כלים פיננסיים שרצים באוויר, בנויים בפייתון. הכניסה בקוד גישה שמופיע בקורות החיים.</p>
       </header>
 
       <div class="apps">
@@ -127,16 +128,16 @@
             <p class="app__desc" data-i18n="p1.desc">דאשבורד אינטראקטיבי למנהלי כספים (<bdi>FP&amp;A</bdi>) המאפשר ניתוח חריגות, קצב שריפת תקציב (<bdi>Run-Rate</bdi>) וירידה לרזולוציית פקודות יומן.</p>
 
             <dl class="kpis">
-              <div class="kpi"><dt data-i18n="p1.kpiBudget">תקציב (מ׳ ₪)</dt><dd class="num"><span data-count="4.80" data-dec="2">4.80</span></dd></div>
-              <div class="kpi"><dt data-i18n="p1.kpiActual">ביצוע (מ׳ ₪)</dt><dd class="num"><span data-count="5.02" data-dec="2">5.02</span></dd></div>
-              <div class="kpi"><dt data-i18n="kpi.variance">סטייה</dt><dd class="num key"><span data-count="4.6" data-dec="1" data-prefix="+" data-suffix="%">+4.6%</span><small data-i18n="kpi.over">מעל התקציב</small></dd></div>
+              <div class="kpi"><dt data-i18n="p1.kpiBudget">תקציב (מ׳ ₪)</dt><dd class="num"><span data-count="18.19" data-dec="2">18.19</span></dd></div>
+              <div class="kpi"><dt data-i18n="p1.kpiActual">ביצוע (מ׳ ₪)</dt><dd class="num"><span data-count="18.11" data-dec="2">18.11</span></dd></div>
+              <div class="kpi"><dt data-i18n="kpi.variance">סטייה</dt><dd class="num key"><span data-count="0.4" data-dec="1" data-prefix="-" data-suffix="%">-0.4%</span><small data-i18n="kpi.onTrack">בתחום התקציב</small></dd></div>
             </dl>
             <p class="kpi-note" data-i18n="p1.kpiNote">נתוני דמה להמחשה</p>
 
-            <p class="app__tools num">Python · Streamlit · Pandas</p>
+            <p class="app__tools num">Python · Pandas · JavaScript · SVG</p>
 
             <div class="access">
-              <a href="https://yardenrozen.streamlit.app/" class="btn btn--primary" target="_blank" rel="noopener">
+              <a href="https://yardenrozen.github.io/cost-center-drill-down-analyzer/" class="btn btn--primary" target="_blank" rel="noopener">
                 <span data-i18n="apps.open">פתיחת האפליקציה</span>
                 <svg class="btn__icon dir-icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
               </a>

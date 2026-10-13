@@ -48,13 +48,14 @@
       'cv.filename': 'Yarden Rozen.pdf',
 
       'apps.title': 'Three live apps',
-      'apps.lead': 'Financial tools running live, built with Python and Streamlit. Entry takes an access code, which is in my CV.',
+      'apps.lead': 'Financial tools running live, built with Python. Entry takes an access code, which is in my CV.',
       'apps.open': 'Open the app',
       'apps.code': 'The access code is in my CV.',
       'apps.cvLink': 'Download',
 
       'kpi.variance': 'Variance',
       'kpi.over': 'over budget',
+      'kpi.onTrack': 'within budget',
 
       'p1.alt': 'Illustration: budget control dashboard showing budget, actuals and expense breakdown',
       'p1.category': 'FP&amp;A · Dashboard',
@@ -173,7 +174,6 @@
   function updateSwitch(active) {
     if (!button) return;
     button.dataset.active = active;   // moves the Hunter block (CSS)
-    button.setAttribute('aria-label', translations[active]['ui.switchTo']);
   }
 
   const save = (lang) => {
